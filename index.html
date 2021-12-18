@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Stitch size</td>
+                <td><input id='st' type="range" min="10" max="100" value='20' oninput="dN = this.value; draw()" /></td>
+            </tr>
+            <tr>
+                <td>Noise:</td>
+                <td>
+                    <label><input id='ra' type="radio" name='random' oninput="perlin = false; draw()" checked /> Random</label>
+                    <br /><label><input id='pe' type="radio" name='random' oninput="perlin = true; draw()" /> Perlin</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Perlin scale</td>
+                <td><input id='ps' type="range" min='0', max='100' value = 20 oninput="scale = this.value; draw()" /></td>
+            </tr>
+            <tr>
+                <td>Threshold</td>
+                <td><input id='th' type="range" min='0', max='1' step='0.01' oninput="threshold = this.value; draw()" /></td>
+            </tr>
+            <tr>
+                <td> Stitch:</td>
+                <td>
+                    <label><input id='sq' name='shape' type="radio" oninput="dim = 2; draw()" checked /> Square</label>
+                    <br /><label><input id='tr' name='shape' type="radio" oninput="dim = 3; draw()" /> Triangular</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Use colors</td>
+                <td><input id='uc' type="checkbox" checked oninput="useColors = this.checked; draw()" /></td>
+            </tr>
+        </table>
+        <button onclick="draw()">Redraw</button>
+        <a style="text-align: center;" href="https://www.buymeacoffee.com/programsam">
+            <img
+                style="width: 70%; padding: 1em;"
+                src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=programsam&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff">
+        </a>
+    </div>
+    <div><main></main></div>
+    
+</body>
+<script src='./js/p5.min.js'></script>
+<script src='./js/index.js'></script>
+</html>
